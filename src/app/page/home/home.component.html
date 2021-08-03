@@ -11,7 +11,7 @@
     <div class="dialog-container">
       <div class="service-parts">
         <div class="menu-title">
-          <span><strong>Szolgáltatás hozzáadása</strong></span>
+          <span><strong style="font-size: larger;">Szolgáltatás hozzáadása</strong></span>
           <iron-icon
             (click)="dialog.opened = false;"
             slot="prefix"
@@ -21,13 +21,19 @@
           </iron-icon>
         </div>
         <div class="service-category">
-          <vaadin-text-field
+          <span>Szolgáltatás kategóriája</span>
+          <div class="category">
+            <iron-icon slot="prefix" icon="vaadin:car"></iron-icon>
+            <span>Autófényezés, karosszériajavítás</span>
+            <vaadin-button class="modify-button">Módosít</vaadin-button>
+          </div>
+          <!-- <vaadin-text-field
             class="text-field"
             label="Szolgáltatásod kategóriája"
             #textField
             placeholder="Autófényezés, karosszériajavítás">
               <iron-icon slot="prefix" icon="vaadin:car"></iron-icon>
-          </vaadin-text-field>
+          </vaadin-text-field> -->
         </div>
         <div class="service-name">
           <vaadin-text-area
@@ -71,8 +77,7 @@
           <div class="button-container">
             <vaadin-button
               class="button-test"
-              (click)='textField.value;
-              dialog.opened=false;'>
+              (click)='dialog.opened=false;'>
                 Változtatások jóváhagyása
             </vaadin-button>
             <app-slide-toggle></app-slide-toggle>

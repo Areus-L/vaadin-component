@@ -20,6 +20,26 @@
   flex-direction: column;
 }
 
+.category {
+  background-color: rgba(85, 77, 87, 0.233);
+  border-radius: 10px;
+  position: relative;
+  padding: 17px;
+  margin-bottom: 10px;
+}
+
+.modify-button {
+  cursor: pointer;
+  align-items: center;
+  margin-top: 0px;
+  color: white;
+  padding: 3px;
+  border: white, solid, 0.3px !important;
+  float: right;
+  background-color: none;
+  border: solid, rgba(85, 77, 87, 0.561), 0.8px;
+}
+
 .text-area {
   background-color:white;
   color: black;
@@ -41,12 +61,12 @@
 
 .plus-buttons {
   cursor: pointer;
-  color: rgba(85, 77, 87, 0.561);;
+  color: rgba(85, 77, 87, 0.561);
 }
 
 .list-items {
   display: flex;
-  border-radius: 2%;
+  border-radius: 10px;
   padding: 6px;
   width: 589px;
   margin: 0, 8%, 15px, 8%;
