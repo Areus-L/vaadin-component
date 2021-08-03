@@ -26,13 +26,12 @@
   border-radius: 10px;
   position: relative;
   padding: 17px;
-  // margin-bottom: 10px;
   max-height: 30px;
 }
 
 .category:after {
   content:'';
-  display:block; /* or whatever else than inline */
+  display:block;
   clear:both;
 }
 
@@ -81,7 +80,6 @@
   width: 589px;
   margin: 0, 8%, 15px, 8%;
   margin-bottom: 15px;
-  // margin-bottom: 10px;
   justify-content: space-between;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
