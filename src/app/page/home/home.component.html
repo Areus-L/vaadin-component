@@ -45,6 +45,7 @@
             <label for="service-prices">Árlista</label>
             <div *ngFor="let item of subServices">
               {{ item.title }} {{ item.price }}Ft/{{ item.type }}
+                <mat-slide-toggle></mat-slide-toggle>
             </div>
           </div>
           <div
@@ -55,6 +56,7 @@
           dialog.opened=false;'
           > Változtatások jóváhagyása
         </vaadin-button>
+          <app-slide-toggle></app-slide-toggle>
       </div>
     </div>
   </div>

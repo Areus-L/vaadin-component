@@ -8,6 +8,9 @@ import { HomeComponent } from './page/home/home.component';
 import { AddServiceComponent } from './page/add-service/add-service.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CdkPortal, PortalModule } from '@angular/cdk/portal';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { CdkPortal, PortalModule } from '@angular/cdk/portal';
     HeaderComponent,
     HomeComponent,
     AddServiceComponent,
+    SlideToggleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     PortalModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

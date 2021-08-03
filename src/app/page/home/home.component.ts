@@ -9,6 +9,7 @@ import '@vaadin/vaadin-icons/vaadin-icons.js';
 import '@vaadin/vaadin-text-field/vaadin-text-area.js';
 import { registerStyles, css } from '@vaadin/vaadin-themable-mixin/register-styles.js';
 import { PriceList, ConfigService } from '../../service/config.service';
+import {ThemePalette} from '@angular/material/core';
 
 
 
@@ -21,12 +22,15 @@ import { PriceList, ConfigService } from '../../service/config.service';
 export class HomeComponent implements OnInit {
 
   subServices: PriceList[] = this.config.serviceList;
+  color: ThemePalette = 'accent';
+  checked = false;
+  disabled = false;
 
   constructor(
     private config: ConfigService
-  ) {
+  ) { }
 
-  }
+
 
   ngOnInit() {
   }
