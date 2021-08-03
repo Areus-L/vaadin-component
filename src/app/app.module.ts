@@ -8,7 +8,6 @@ import { HomeComponent } from './page/home/home.component';
 import { AddServiceComponent } from './page/add-service/add-service.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CdkPortal, PortalModule } from '@angular/cdk/portal';
-import { TemplateModule } from '@codebakery/origami/templates';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { TemplateModule } from '@codebakery/origami/templates';
     AppRoutingModule,
     ReactiveFormsModule,
     PortalModule,
-    //TemplateModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

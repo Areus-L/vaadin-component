@@ -15,6 +15,70 @@
 </head>
 <body>
   <app-root></app-root>
+  <custom-style>
+    <style>
+
+html {
+  --lumo-font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --lumo-border-radius: 0.75em;
+  --lumo-size-xl: 4rem;
+  --lumo-size-l: 3rem;
+  --lumo-size-m: 2.5rem;
+  --lumo-size-s: 2rem;
+  --lumo-size-xs: 1.75rem;
+  --lumo-shade-5pct: rgba(47, 26, 76, 0.05);
+  --lumo-shade-10pct: rgba(254, 254, 255, 0.1);
+  /* --lumo-shade-20pct: rgba(94, 2, 117, 0.2); */
+  --lumo-shade-20pct: rgba(32, 18, 156, 0.466);
+  --lumo-shade-30pct: rgba(191, 184, 202, 0.3);
+  --lumo-shade-40pct: rgba(47, 26, 76, 0.4);
+  --lumo-shade-50pct: rgba(47, 26, 76, 0.5);
+  --lumo-shade-60pct: rgba(47, 26, 76, 0.6);
+  --lumo-shade-70pct: rgba(47, 26, 76, 0.7);
+  --lumo-shade-80pct: rgba(47, 26, 76, 0.8);
+  --lumo-shade-90pct: rgba(191, 184, 202, 0.3);
+  --lumo-shade: hsl(265, 49%, 20%);
+  --lumo-tint-5pct: rgba(253, 252, 252, 0.05);
+  --lumo-tint-10pct: rgba(253, 252, 252, 0.1);
+  --lumo-tint-20pct: rgba(253, 252, 252, 0.2);
+  --lumo-tint-30pct: rgba(253, 252, 252, 0.3);
+  --lumo-tint-40pct: rgba(253, 252, 252, 0.4);
+  --lumo-tint-50pct: rgba(253, 252, 252, 0.5);
+  --lumo-tint-60pct: rgba(253, 252, 252, 0.6);
+  --lumo-tint-70pct: rgba(253, 252, 252, 0.7);
+  --lumo-tint-80pct: rgba(253, 252, 252, 0.8);
+  --lumo-tint-90pct: rgba(253, 252, 252, 0.9);
+  --lumo-tint: #fdfcfc;
+  --lumo-primary-text-color: rgb(243, 22, 140);
+  --lumo-primary-color-50pct: rgba(243, 22, 140, 0.5);
+  --lumo-primary-color-10pct: rgba(243, 22, 140, 0.1);
+  --lumo-primary-color: hsl(328, 90%, 52%);
+  --lumo-error-text-color: rgb(240, 10, 52);
+  --lumo-error-color-50pct: rgba(240, 10, 52, 0.5);
+  --lumo-error-color-10pct: rgba(240, 10, 52, 0.1);
+  --lumo-error-color: hsl(349, 92%, 49%);
+  --lumo-body-text-color: rgba(5, 2, 8, 0.9);
+  --lumo-secondary-text-color: rgba(5, 2, 8, 0.7);
+  --lumo-text-body: rgba(252, 8, 8, 0.4);
+}
+
+  [theme~="dark"] {
+  }
+
+    </style>
+  </custom-style>
+  <!-- <dom-module id="text-field-style" theme-for="vaadin-text-field">
+    <template>
+      <style>[part="input-field"]{box-shadow:inset 0 0 0 1px var(--lumo-contrast-30pct);background-color:var(--lumo-base-color);}:host([invalid]) [part="input-field"]{box-shadow:inset 0 0 0 1px var(--lumo-error-color);}
+      </style>
+    </template>
+  </dom-module> -->
+  <dom-module id="text-area-style" theme-for="vaadin-text-area">
+    <template>
+      <style>[part="input-field"]{box-shadow:inset 0 0 0 1px var(--lumo-contrast-30pct);background-color:var(--lumo-base-color);}:host([invalid]) [part="input-field"]{box-shadow:inset 0 0 0 1px var(--lumo-error-color);}
+      </style>
+    </template>
+  </dom-module>
 </body>
 </html>
 

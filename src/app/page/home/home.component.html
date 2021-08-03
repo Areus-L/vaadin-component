@@ -1,9 +1,80 @@
-<h2>Hello {{title}}!</h2>
+<div class="container">
+  <vaadin-button
+    (click)="dialog.opened = true"
+    class="custom-button">
+      <span>Új szolgáltatás</span>
+  </vaadin-button>
+</div>
 
-<vaadin-button (click)="dialog.opened = true">Open</vaadin-button>
-<vaadin-dialog #dialog >
+<vaadin-dialog #dialog>
     <template>
-    <vaadin-text-field #textField placeholder="Type Something"></vaadin-text-field>
-    <vaadin-button (click)='title=textField.value; dialog.opened=false;'>Say hello!</vaadin-button>
+      <div style="display: block;">
+        <div class="menu-title">
+          <span><strong>Szolgáltatás hozzáadása</strong></span>
+            <iron-icon
+              (click)='textField.value;
+              dialog.opened=false;'
+              slot="prefix"
+              style="float: right;
+              cursor: pointer;"
+              icon="vaadin:close-small"></iron-icon>
+        </div>
+        <div class="service-category">
+          <vaadin-text-field
+            class="textField"
+            label="Szolgáltatásod kategóriája"
+            #textField
+            placeholder="Autófényezés, karosszériajavítás">
+              <iron-icon slot="prefix" icon="vaadin:car"></iron-icon>
+          </vaadin-text-field>
+        </div>
+        <div>
+          <div class="service-title">
+            <vaadin-text-area
+              class="textArea"
+              label="Szolgáltatásod rövid címe"
+              placeholder="Autó és egyéb járműfényezést vállalok"></vaadin-text-area>
+          </div>
+          <div class="service-description">
+            <vaadin-text-area
+              class="textArea"
+              label="Szolgáltatásaid bővebb kifejtése"
+              placeholder="Fejtsd ki miről szól a szolgáltatásod">
+            </vaadin-text-area>
+          </div>
+          <div class="service-prices">
+            <vaadin-text-field
+              label="Árlista"
+              placeholder="Type Something">
+            </vaadin-text-field>
+          </div>
+          <div
+            class="service-buttons">
+            <vaadin-button
+              class="button-test"
+              (click)='textField.value;
+              dialog.opened=false;'
+              > Változtatások jóváhagyása
+            </vaadin-button>
+          </div>
+        </div>
+      </div>
     </template>
 </vaadin-dialog>
+
+<custom-style>
+  <style>
+    .button-test {
+      background-color: var(--lumo-primary-color);
+      color: white;
+    }
+    .space-xs {
+      padding: var(--lumo-space-xs);
+    }
+    .space-xl {
+      padding: var(--lumo-space-xl);
+    }
+  </style>
+</custom-style>
+
+<!-- vertical-align: text-top; -->
