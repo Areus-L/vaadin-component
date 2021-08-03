@@ -7,76 +7,92 @@
 </div>
 
 <vaadin-dialog #dialog>
-    <template>
-      <div style="display: block;">
+  <template>
+    <div class="dialog-container">
+      <div class="service-parts">
         <div class="menu-title">
           <span><strong>Szolgáltatás hozzáadása</strong></span>
-            <iron-icon
-              (click)="dialog.opened = false;"
-              slot="prefix"
-              style="float: right;
-              cursor: pointer;"
-              icon="vaadin:close-small"></iron-icon>
+          <iron-icon
+            (click)="dialog.opened = false;"
+            slot="prefix"
+            style="float: right;"
+            class="plus-buttons"
+            icon="vaadin:close-small">
+          </iron-icon>
         </div>
         <div class="service-category">
           <vaadin-text-field
-            class="textField"
+            class="text-field"
             label="Szolgáltatásod kategóriája"
             #textField
             placeholder="Autófényezés, karosszériajavítás">
               <iron-icon slot="prefix" icon="vaadin:car"></iron-icon>
           </vaadin-text-field>
         </div>
-        <div>
-          <div class="service-title">
-            <vaadin-text-area
-              class="textArea small-field"
-              label="Szolgáltatásod rövid címe"
-              placeholder="Autó és egyéb járműfényezést vállalok"></vaadin-text-area>
-          </div>
-          <div class="service-description">
-            <vaadin-text-area
-              class="textArea"
-              label="Szolgáltatásaid bővebb kifejtése"
-              placeholder="Fejtsd ki miről szól a szolgáltatásod">
-            </vaadin-text-area>
-          </div>
-          <div class="service-prices">
-            <label for="service-prices">Árlista</label>
-            <div *ngFor="let item of subServices">
-              {{ item.title }} {{ item.price }}Ft/{{ item.type }}
-                <mat-slide-toggle></mat-slide-toggle>
+        <div class="service-name">
+          <vaadin-text-area
+            class="text-area small-field"
+            label="Szolgáltatásod rövid címe"
+            value="Autó és egyéb járműfényezést vállalok">
+          </vaadin-text-area>
+        </div>
+        <div class="service-description">
+          <vaadin-text-area
+            class="text-area"
+            label="Szolgáltatásaid bővebb kifejtése"
+            placeholder="Írj részletesen szolgáltatásodról!"
+            value="Édesapámtól ellesett fortélyokkal és trükkökkel igazán vagány, egyedi külsőt varázsolok az autódnak. Külön szenvedélyem az old timerek javítása, fényezése. Ezen felül informatikában is jártas vagyok.">
+          </vaadin-text-area>
+        </div>
+        <div class="price-list">
+          <label for="price-list">Árlista</label>
+          <div class="price-list-parts">
+            <div class="add-button">
+              <iron-icon
+                class="plus-buttons"
+                slot="prefix"
+                icon="vaadin:plus-circle">
+              </iron-icon> Új tétel hozzáadása
+            </div>
+            <div
+              *ngFor="let item of subServices"
+              class="list-items">
+                <div style="float:left">{{ item.title }}</div>
+                <div style="float:right">{{ item.price }}
+                  <span class="upper-index"> Ft</span>/{{ item.type }}
+                </div>
+                <div style="float:right">
+                  <mat-slide-toggle></mat-slide-toggle>
+                </div>
             </div>
           </div>
-          <div
-          class="service-buttons">
-          <vaadin-button
-          class="button-test"
-          (click)='textField.value;
-          dialog.opened=false;'
-          > Változtatások jóváhagyása
-        </vaadin-button>
-          <app-slide-toggle></app-slide-toggle>
+        </div>
+        <div class="service-buttons">
+          <div class="button-container">
+            <vaadin-button
+              class="button-test"
+              (click)='textField.value;
+              dialog.opened=false;'>
+                Változtatások jóváhagyása
+            </vaadin-button>
+            <app-slide-toggle></app-slide-toggle>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</template>
+  </template>
 </vaadin-dialog>
 
-<!-- <custom-style>
+<custom-style>
   <style>
     .button-test {
       background-color: var(--lumo-primary-color);
       color: white;
-    }
-    .space-xs {
-      padding: var(--lumo-space-xs);
-    }
-    .space-xl {
-      padding: var(--lumo-space-xl);
+      font-weight: 600;
+      float: right;
     }
     </style>
-</custom-style> -->
+</custom-style>
 
 <!-- vertical-align: text-top; -->
 

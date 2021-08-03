@@ -11,6 +11,7 @@ import { CdkPortal, PortalModule } from '@angular/cdk/portal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
