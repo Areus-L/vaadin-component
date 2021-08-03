@@ -27,8 +27,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
-#Notes
+# Notes
 
 + Vaadin has no documentation for Angular
 + components has to be install one by one with npm
 + very difficult to modify css
++ use html tags instead of css class e.g. <vaadin-button> Add </vaadin-button>
