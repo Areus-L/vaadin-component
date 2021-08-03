@@ -27,13 +27,6 @@
             <span>Autófényezés, karosszériajavítás</span>
             <vaadin-button class="modify-button">Módosít</vaadin-button>
           </div>
-          <!-- <vaadin-text-field
-            class="text-field"
-            label="Szolgáltatásod kategóriája"
-            #textField
-            placeholder="Autófényezés, karosszériajavítás">
-              <iron-icon slot="prefix" icon="vaadin:car"></iron-icon>
-          </vaadin-text-field> -->
         </div>
         <div class="service-name">
           <vaadin-text-area
@@ -63,12 +56,15 @@
             <div
               *ngFor="let item of subServices"
               class="list-items">
-                <div style="float:left">{{ item.title }}</div>
-                <div style="float:right">{{ item.price }}
-                  <span class="upper-index"> Ft</span>/{{ item.type }}
-                </div>
-                <div style="float:right">
-                  <mat-slide-toggle></mat-slide-toggle>
+                <div>{{ item.title }}</div>
+                <div style="display: inline-flex;">
+                  <div>
+                    {{ item.price }}
+                    <span class="upper-index"> Ft</span>/{{ item.type }} &nbsp;&nbsp;&nbsp;
+                  </div>
+                  <div>
+                    <mat-slide-toggle></mat-slide-toggle>&nbsp;&nbsp;
+                  </div>
                 </div>
             </div>
           </div>

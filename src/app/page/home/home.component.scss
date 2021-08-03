@@ -9,6 +9,7 @@
 
 .vaadin-dialog {
   width:33%;
+  box-shadow: 0 1px 4px -1px  hsla(214, 45%, 20%, 0.5) !important;
 }
 
 .dialog-container {
@@ -25,7 +26,14 @@
   border-radius: 10px;
   position: relative;
   padding: 17px;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
+  max-height: 30px;
+}
+
+.category:after {
+  content:'';
+  display:block; /* or whatever else than inline */
+  clear:both;
 }
 
 .modify-button {
@@ -33,7 +41,7 @@
   align-items: center;
   margin-top: 0px;
   color: white;
-  padding: 3px;
+  padding: 2px;
   border: white, solid, 0.3px !important;
   float: right;
   background-color: none;
@@ -66,12 +74,15 @@
 
 .list-items {
   display: flex;
+  order: 5;
+  float: inline-end;
   border-radius: 10px;
   padding: 6px;
   width: 589px;
   margin: 0, 8%, 15px, 8%;
   margin-bottom: 15px;
   // margin-bottom: 10px;
+  justify-content: space-between;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
