@@ -1,1 +1,9 @@
-<p>home works!</p>
+<h2>Hello {{title}}!</h2>
+
+<vaadin-button (click)="dialog.opened = true">Open</vaadin-button>
+<vaadin-dialog #dialog >
+    <template>
+    <vaadin-text-field #textField placeholder="Type Something"></vaadin-text-field>
+    <vaadin-button (click)='title=textField.value; dialog.opened=false;'>Say hello!</vaadin-button>
+    </template>
+</vaadin-dialog>

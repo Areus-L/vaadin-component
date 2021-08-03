@@ -5,7 +5,7 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -15,6 +15,7 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2017",
+    "allowJs": true,
     "module": "es2020",
     "lib": [
       "es2018",
@@ -22,6 +23,8 @@
     ]
   },
   "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "enableIvy": false,
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
