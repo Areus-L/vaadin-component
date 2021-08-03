@@ -32,4 +32,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 + Vaadin has no documentation for Angular
 + components has to be install one by one with npm
 + very difficult to modify css
-+ use html tags instead of css class e.g. "<vaadin-button> Add </vaadin-button>"
++ use html tags instead of css class e.g. "(vaadin-button) Add (/vaadin-button)"
