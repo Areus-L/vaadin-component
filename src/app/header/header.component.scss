@@ -17,7 +17,15 @@ vaadin-app-layout {
   background-color: brown !important
 }
 
+body {
+  margin: 0px;
+}
+
 .navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  display: flex;
   height: 50px;
   text-align: left;
   color:white;
@@ -26,6 +34,7 @@ vaadin-app-layout {
   overflow: hidden;
   top: 0%;
   margin-top: 0;
+  background-color: brown;
   background-image: linear-gradient(to left, rgba(250, 3, 135, 0.815), rgb(170, 2, 91));
 }
 
