@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './page/home/home.component';
 import { SlideToggleComponent } from './field-elements/slide-toggle/slide-toggle.component';
 import { TextareaComponent } from './field-elements/textarea/textarea.component';
+import { ListItemComponent } from './field-elements/list-item/list-item.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { TextareaComponent } from './field-elements/textarea/textarea.component'
     HomeComponent,
     SlideToggleComponent,
     TextareaComponent,
+    ListItemComponent,
   ],
   imports: [
     BrowserModule,
