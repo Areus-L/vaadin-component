@@ -32,18 +32,15 @@
         </div>
         <div class="service-name">
           <app-textarea
-            [maxLength]="5"
+            [maxLength]="75"
             [height]="'80px'">
           </app-textarea>
         </div>
         <div class="service-description">
-          <vaadin-text-area
-            [maxlength]="250"
-            class="text-area"
-            label="Szolgáltatásaid bővebb kifejtése"
-            placeholder="Írj részletesen szolgáltatásodról!"
-            value="Édesapámtól ellesett fortélyokkal és trükkökkel igazán vagány, egyedi külsőt varázsolok az autódnak. Külön szenvedélyem az old timerek javítása, fényezése. Ezen felül informatikában is jártas vagyok.">
-          </vaadin-text-area>
+          <app-textarea
+            [maxLength]="250"
+            [height]="'120px'">
+          </app-textarea>
         </div>
         <div class="price-list">
           <label for="price-list">Árlista</label>
@@ -65,7 +62,7 @@
                     <span class="upper-index"> Ft</span>/{{ item.type }} &nbsp;&nbsp;&nbsp;
                   </div>
                   <div>
-                    <mat-slide-toggle></mat-slide-toggle>&nbsp;&nbsp;
+                    <app-slide-toggle></app-slide-toggle>&nbsp;&nbsp;
                   </div>
                 </div>
             </div>
