@@ -1,10 +1,15 @@
-<vaadin-text-area
-  name="test"
-  #serviceName
-  maxlength="75"
-  class="text-area small-field"
-  label="Szolgáltatásod rövid címe"
-  [(ngModel)]="value"
-  value="sfdsfsf">
-</vaadin-text-area>
-<span>{{ value }}</span>
+<div class="textarea-container">
+  <vaadin-text-area
+    name="area"
+    ngDefaultControl
+    [maxlength]="maxLength"
+    [style.height-max]="height"
+    class="text-area small-field"
+    label="Szolgáltatásod rövid címe"
+    [(ngModel)]="value"
+    (change)="onChangeText($event)"
+    >
+  </vaadin-text-area>
+  <span class="counter">{{ value.length }}/{{ maxLength }}</span>
+</div>
+

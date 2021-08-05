@@ -11,7 +11,6 @@ import { PortalModule } from '@angular/cdk/portal';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './page/home/home.component';
-import { AddServiceComponent } from './page/add-service/add-service.component';
 import { SlideToggleComponent } from './field-elements/slide-toggle/slide-toggle.component';
 import { TextareaComponent } from './field-elements/textarea/textarea.component';
 
@@ -21,7 +20,6 @@ import { TextareaComponent } from './field-elements/textarea/textarea.component'
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    AddServiceComponent,
     SlideToggleComponent,
     TextareaComponent,
   ],

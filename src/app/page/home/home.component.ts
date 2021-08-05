@@ -1,4 +1,4 @@
-import { OnInit, Component, ViewChild, ElementRef, Input, OnChanges, DoCheck } from '@angular/core';
+import { OnInit, Component, ViewChild, ElementRef, Input } from '@angular/core';
 import { polymerHost } from '@codebakery/origami/templates';
 
 import '@vaadin/vaadin-button/vaadin-button.js';

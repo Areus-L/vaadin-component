@@ -1,0 +1,27 @@
+.textarea-container {
+  display: grid;
+}
+
+vaadin-text-area {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  background-color:white;
+  color: black;
+  border-radius: 10%;
+  width: 600px;
+  margin: 0, 8%, 0, 8%;
+  text-align: left;
+}
+
+.counter {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  align-self: flex-end;
+  z-index: 1;
+  color: gray;
+  font-size: small;
+  grid-column: 1;
+  grid-row: 1;
+}
