@@ -8,6 +8,7 @@
 
 <vaadin-dialog #dialog>
   <template>
+    <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
     <div class="dialog-container">
       <div class="service-parts">
         <div class="menu-title">
@@ -31,14 +32,12 @@
           </div>
         </div>
         <div class="service-name">
-          <vaadin-text-area
-            class="text-area small-field"
-            label="Szolgáltatásod rövid címe"
-            value="Autó és egyéb járműfényezést vállalok">
-          </vaadin-text-area>
+          <app-textarea>
+          </app-textarea>
         </div>
         <div class="service-description">
           <vaadin-text-area
+            [maxlength]="250"
             class="text-area"
             label="Szolgáltatásaid bővebb kifejtése"
             placeholder="Írj részletesen szolgáltatásodról!"
