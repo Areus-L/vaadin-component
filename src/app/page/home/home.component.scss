@@ -39,12 +39,12 @@ vaadin-dialog {
   cursor: pointer;
   align-items: center;
   margin-top: 0px;
-  color: white;
-  padding: 2px;
-  border: white, solid, 0.3px !important;
+  color: rgba(42, 42, 42, 0.561);
+  padding: 8px;
   float: right;
-  background-color: none;
-  border: solid, rgba(85, 77, 87, 0.561), 0.8px;
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid rgb(163, 163, 163)!important;
 }
 
 .text-area {

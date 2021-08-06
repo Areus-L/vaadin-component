@@ -10,6 +10,7 @@ import '@vaadin/vaadin-text-field/vaadin-text-area.js';
 import { registerStyles, css } from '@vaadin/vaadin-themable-mixin/register-styles.js';
 import { PriceList, ConfigService } from '../../service/config.service';
 import { MatSlider } from '@angular/material/slider';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -24,13 +25,29 @@ export class HomeComponent implements OnInit {
   @ViewChild('dialog', {static: true}) dialog = ElementRef;
   @Input('maxlength') maxLength: number;
   nameFieldChars: number = 0;
-  openModal = false;
+  printbutton = false;
+
+  obs$ = new Observable<any>(observer => {
+    observer.next(!this.printbutton);
+  })
 
   constructor(
     private config: ConfigService
     ) { }
 
   ngOnInit() {
+    this.obs$.subscribe(
+      data => {
+        this.printbutton = data;
+      }
+    )
+  }
+
+  print() {
+    this.obs$.subscribe(
+      data => console.log(data)
+    )
+    console.log('print')
   }
 
   onOpenDialog() {

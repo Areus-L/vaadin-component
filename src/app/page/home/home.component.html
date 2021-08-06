@@ -3,11 +3,12 @@
     (click)="dialog.opened = true"
     class="custom-button">
       <span>Új szolgáltatás</span>
-  </vaadin-button>
-</div>
-
+    </vaadin-button>
+    </div>
 <vaadin-dialog #dialog>
   <template>
+    <!-- <button (click)="print()">print</button>
+    <div [ngStyle]="{'background-color' : printbutton ? 'green' : 'blue'}">test</div> -->
     <div class="dialog-container">
       <div class="service-parts">
         <div class="menu-title">
@@ -27,13 +28,13 @@
           <div class="category">
             <iron-icon slot="prefix" icon="vaadin:car"></iron-icon>
             <span>Autófényezés, karosszériajavítás</span>
-            <vaadin-button class="modify-button">Módosít</vaadin-button>
+            <button class="modify-button">Módosít</button>
           </div>
         </div>
         <div class="service-name">
           <app-textarea
             [maxLength]="75"
-            [height]="'80px'">
+            [height]="'90px'">
           </app-textarea>
         </div>
         <div class="service-description">
@@ -66,7 +67,10 @@
               (click)='dialog.opened=false;'>
                 Változtatások jóváhagyása
             </vaadin-button>
-            <app-slide-toggle></app-slide-toggle>
+            <div style="margin-top: 15px;
+            width: 300px;">
+              <app-slide-toggle></app-slide-toggle> <span>Szolgáltatás megjelenítése</span>
+            </div>
           </div>
         </div>
       </div>

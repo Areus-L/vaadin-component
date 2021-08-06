@@ -17,5 +17,7 @@ export class ConfigService {
     {title: 'Sed ut perspiciatis unde', price: '20.000', type: 'autó', active: false},
     {title: 'Sed ut perspiciatis unde omnis iste natus error', price: '20.000', type: 'autó', active: true},
   ]
+
+  
   constructor() { }
 }
