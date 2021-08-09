@@ -1,0 +1,20 @@
+<div class="modal">
+  <div class="modal-body">
+    <div class="modal-title">
+      <span>
+        <strong style="font-size: larger;">Szolgáltatás hozzáadása</strong>
+      </span>
+      <iron-icon
+        (click)="closeModal()"
+        slot="prefix"
+        style="float: right;"
+        class="plus-buttons"
+        icon="vaadin:close-small">
+      </iron-icon>
+    </div>
+    <ng-content>
+
+    </ng-content>
+  </div>
+</div>
+<div class="modal-background"></div>

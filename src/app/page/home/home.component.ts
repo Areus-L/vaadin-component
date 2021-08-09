@@ -8,6 +8,7 @@ import '@vaadin/vaadin-icons/iconset';
 import '@vaadin/vaadin-icons/vaadin-icons.js';
 import '@vaadin/vaadin-text-field/vaadin-text-area.js';
 import { registerStyles, css } from '@vaadin/vaadin-themable-mixin/register-styles.js';
+import { NgForm } from '@angular/forms';
 import { PriceList, ConfigService } from '../../service/config.service';
 import { MatSlider } from '@angular/material/slider';
 import { Observable } from 'rxjs';
@@ -22,7 +23,11 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   subServices: PriceList[] = this.config.serviceList;
-  @ViewChild('dialog', {static: true}) dialog = ElementRef;
+
+  isModalVisible: boolean = false;
+
+  // @ViewChild('f') signupForm: NgForm;
+  // @ViewChild('dialog', {static: true}) dialog = ElementRef;
   @Input('maxlength') maxLength: number;
   nameFieldChars: number = 0;
   printbutton = false;
@@ -36,23 +41,34 @@ export class HomeComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.obs$.subscribe(
-      data => {
-        this.printbutton = data;
-      }
-    )
+  }
+
+  openModal() {
+    console.log('visible')
+    this.isModalVisible = true;
+  }
+
+  closeModal(visible: string) {
+    if (visible === 'close') {
+      this.isModalVisible = false;
+    }
   }
 
   print() {
     this.obs$.subscribe(
-      data => console.log(data)
+      data => {this.printbutton = data;}
     )
     console.log('print')
   }
 
   onOpenDialog() {
-    console.log(this.dialog);
+    console.log('this.dialog');
   }
+
+  onSubmit() {
+    console.log('it is working')
+  }
+
 }
 
 // an other way to modify vaadin elements

@@ -1,28 +1,25 @@
 <div class="container">
-  <vaadin-button
-    (click)="dialog.opened = true"
-    class="custom-button">
-      <span>Új szolgáltatás</span>
-    </vaadin-button>
-    </div>
-<vaadin-dialog #dialog>
-  <template>
-    <!-- <button (click)="print()">print</button>
-    <div [ngStyle]="{'background-color' : printbutton ? 'green' : 'blue'}">test</div> -->
+  <button
+  style="position: fixed;
+  top: 300px;"
+  (click)="openModal()">Open Modal</button>
+
+  <app-modal [title]="'Szolgáltatás hozzáadása'"
+    *ngIf="isModalVisible"
+    (modalVisibility)="closeModal($event)">
     <div class="dialog-container">
       <div class="service-parts">
-        <div class="menu-title">
+        <!-- <div class="menu-title">
           <span>
             <strong style="font-size: larger;">Szolgáltatás hozzáadása</strong>
           </span>
           <iron-icon
-            (click)="dialog.opened = false;"
             slot="prefix"
             style="float: right;"
             class="plus-buttons"
             icon="vaadin:close-small">
           </iron-icon>
-        </div>
+        </div> -->
         <div class="service-category">
           <span>Szolgáltatás kategóriája</span>
           <div class="category">
@@ -32,6 +29,10 @@
           </div>
         </div>
         <div class="service-name">
+          <!-- <input
+            name="email"
+            type="text"
+            email> -->
           <app-textarea
             [maxLength]="75"
             [height]="'90px'">
@@ -63,8 +64,9 @@
         <div class="service-buttons">
           <div class="button-container">
             <vaadin-button
+              type="submit"
               class="button-test"
-              (click)='dialog.opened=false;'>
+              >
                 Változtatások jóváhagyása
             </vaadin-button>
             <div style="margin-top: 15px;
@@ -75,10 +77,43 @@
         </div>
       </div>
     </div>
-  </template>
-</vaadin-dialog>
+  </app-modal>
+</div>
 
-<custom-style>
+<!-- <div class="container">
+  <vaadin-button
+    (click)="dialog.opened = true"
+    class="custom-button">
+      <span>Új szolgáltatás</span>
+  </vaadin-button>
+  <vaadin-button
+    routerLink="/search"
+    class="custom-button">
+      <span>Search</span>
+  </vaadin-button>
+</div> -->
+
+<!-- <button (click)="print()">print</button>
+<div [ngStyle]="{'background-color' : printbutton ? 'green' : 'blue'}">test</div> -->
+
+<!-- <div class="service-description">
+  <app-textarea
+    [maxLength]="250"
+    [height]="'120px'">
+  </app-textarea>
+</div>
+
+<vaadin-dialog #dialog>
+  <template>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <button (click)="print()">print</button>
+    <div [ngStyle]="{'background-color' : printbutton ? 'green' : 'blue'}">test</div>
+
+  </form>
+  </template>
+</vaadin-dialog> -->
+
+<!-- <custom-style>
   <style>
     .button-test {
       background-color: var(--lumo-primary-color);
@@ -87,4 +122,4 @@
       float: right;
     }
     </style>
-</custom-style>
+</custom-style> -->

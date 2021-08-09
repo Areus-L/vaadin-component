@@ -14,6 +14,8 @@ import { HomeComponent } from './page/home/home.component';
 import { SlideToggleComponent } from './field-elements/slide-toggle/slide-toggle.component';
 import { TextareaComponent } from './field-elements/textarea/textarea.component';
 import { ListItemComponent } from './field-elements/list-item/list-item.component';
+import { SearchFieldComponent } from './field-elements/search-field/search-field.component';
+import { ModalComponent } from './field-elements/modal/modal.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { ListItemComponent } from './field-elements/list-item/list-item.componen
     SlideToggleComponent,
     TextareaComponent,
     ListItemComponent,
+    SearchFieldComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
