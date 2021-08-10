@@ -9,15 +9,13 @@ import { PriceList } from '../../service/config.service';
 export class ListItemComponent implements OnInit {
 
   @Input() item: PriceList;
-  inactiveItem: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onToggleServiceItem(){
-    this.inactiveItem = !this.inactiveItem;
+  onChangeitemActivity(active: boolean) {
+    this.item.active = active;
   }
-
 }

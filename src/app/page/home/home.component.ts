@@ -26,16 +26,6 @@ export class HomeComponent implements OnInit {
 
   isModalVisible: boolean = false;
 
-  // @ViewChild('f') signupForm: NgForm;
-  // @ViewChild('dialog', {static: true}) dialog = ElementRef;
-  @Input('maxlength') maxLength: number;
-  nameFieldChars: number = 0;
-  printbutton = false;
-
-  obs$ = new Observable<any>(observer => {
-    observer.next(!this.printbutton);
-  })
-
   constructor(
     private config: ConfigService
     ) { }
@@ -44,9 +34,9 @@ export class HomeComponent implements OnInit {
   }
 
   openModal() {
-    console.log('visible')
     this.isModalVisible = true;
   }
+
 
   closeModal(visible: string) {
     if (visible === 'close') {
@@ -54,21 +44,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  print() {
-    this.obs$.subscribe(
-      data => {this.printbutton = data;}
-    )
-    console.log('print')
-  }
+  addItem(){
 
-  onOpenDialog() {
-    console.log('this.dialog');
   }
-
-  onSubmit() {
-    console.log('it is working')
-  }
-
 }
 
 // an other way to modify vaadin elements

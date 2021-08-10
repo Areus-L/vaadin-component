@@ -1,6 +1,7 @@
 <div
 class="list-items"
-[ngClass]="{'inactive': inactiveItem}">
+[ngClass]="{'inactive': !item.active}"
+>
   <div>{{ item.title }}</div>
   <div style="display: inline-flex;">
     <div>
@@ -8,7 +9,10 @@ class="list-items"
       <span class="upper-index"> Ft</span>/{{ item.type }} &nbsp;&nbsp;&nbsp;
     </div>
     <div>
-      <app-slide-toggle (click)=onToggleServiceItem()></app-slide-toggle>&nbsp;&nbsp;
+      <app-slide-toggle
+        (changeActivity)="onChangeitemActivity($event)"
+        [active]="item.active">
+      </app-slide-toggle>&nbsp;&nbsp;
     </div>
   </div>
 </div>

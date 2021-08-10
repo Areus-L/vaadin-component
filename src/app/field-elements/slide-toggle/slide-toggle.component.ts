@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
 @Component({
@@ -8,13 +8,13 @@ import { EventEmitter } from '@angular/core';
 })
 export class SlideToggleComponent implements OnInit {
 
-  active = true;
+  @Input() active: boolean;
+  @Output() changeActivity = new EventEmitter<boolean>();
 
   toggle() {
-    this.active = !this.active;
-    console.log(this.active);
+    this.changeActivity.emit(!this.active);
   }
-  
+
   constructor() { }
 
   ngOnInit(): void {
