@@ -8,10 +8,8 @@ import '@vaadin/vaadin-icons/iconset';
 import '@vaadin/vaadin-icons/vaadin-icons.js';
 import '@vaadin/vaadin-text-field/vaadin-text-area.js';
 import { registerStyles, css } from '@vaadin/vaadin-themable-mixin/register-styles.js';
-import { NgForm } from '@angular/forms';
 import { PriceList, ConfigService } from '../../service/config.service';
 import { MatSlider } from '@angular/material/slider';
-import { Observable } from 'rxjs';
 
 
 @Component({
@@ -25,6 +23,7 @@ export class HomeComponent implements OnInit {
   subServices: PriceList[] = this.config.serviceList;
 
   isModalVisible: boolean = false;
+  isPriceModalVisible: boolean = false;
 
   constructor(
     private config: ConfigService
@@ -34,22 +33,29 @@ export class HomeComponent implements OnInit {
   }
 
   openModal() {
+    if (this.isModalVisible) {
+      this.isPriceModalVisible = true;
+    }
     this.isModalVisible = true;
   }
 
 
-  closeModal(visible: string) {
-    if (visible === 'close') {
-      this.isModalVisible = false;
+  closeModal(visible: boolean) {
+    if (this.isPriceModalVisible == true){
+      this.isPriceModalVisible = visible;
+    } else {
+      this.isModalVisible = visible;
     }
   }
 
-  addItem(){
-
+  addItem(item: { title: string, price: string, type: string, active: boolean }){
+    this.subServices.push(item);
   }
 }
 
+
 // an other way to modify vaadin elements
+
 // registerStyles('vaadin-button', css`
 //   :host {
 //     background-color:pink;

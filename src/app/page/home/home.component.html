@@ -3,7 +3,20 @@
   style="position: fixed;
   top: 300px;"
   class="custom-button"
-  (click)="openModal()">Új szolgáltatás</vaadin-button>
+  (click)="openModal()">
+    Új szolgáltatás
+  </vaadin-button>
+
+  <app-modal
+  [title]="'Új alkategória'"
+  *ngIf="isPriceModalVisible"
+  (modalVisibility)="closeModal($event)"
+  style="z-index: 3; position: fixed;">
+    <app-subcategory
+      (newPriceItemAdd)="addItem($event)"
+      (closeWindow)="closeModal($event)">
+    </app-subcategory>
+  </app-modal>
 
   <app-modal
     [title]="'Szolgáltatás hozzáadása'"
@@ -40,8 +53,9 @@
         <div class="price-list">
           <label for="price-list">Árlista</label>
           <div class="price-list-parts">
-            <div class="add-button" (click)="addItem()">
+            <div class="add-button">
               <iron-icon
+                (click)="openModal()"
                 class="plus-buttons"
                 slot="prefix"
                 icon="vaadin:plus-circle">
@@ -59,7 +73,7 @@
           <div class="button-container">
             <vaadin-button
               type="submit"
-              class="button-test"
+              class="button-save"
               >
                 Változtatások jóváhagyása
             </vaadin-button>
@@ -78,7 +92,7 @@
 
 <custom-style>
   <style>
-    .button-test {
+    .button-save {
       background-color: var(--lumo-primary-color);
       color: white;
       font-weight: 600;

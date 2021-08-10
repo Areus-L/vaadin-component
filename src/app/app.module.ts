@@ -16,6 +16,7 @@ import { TextareaComponent } from './field-elements/textarea/textarea.component'
 import { ListItemComponent } from './field-elements/list-item/list-item.component';
 import { SearchFieldComponent } from './field-elements/search-field/search-field.component';
 import { ModalComponent } from './field-elements/modal/modal.component';
+import { SubcategoryComponent } from './form/subcategory/subcategory.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ModalComponent } from './field-elements/modal/modal.component';
     ListItemComponent,
     SearchFieldComponent,
     ModalComponent,
+    SubcategoryComponent,
   ],
   imports: [
     BrowserModule,

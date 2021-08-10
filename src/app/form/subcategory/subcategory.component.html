@@ -1,0 +1,39 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm" ngNativeValidate >
+
+  <div>
+    <label for="name">Alkategória megnevezése</label>
+    <input
+      type="text"
+      ngModel
+      name="name"
+      required>
+  </div>
+
+  <div>
+    <label for="name">Ár</label>
+    <input
+      type="text"
+      ngModel
+      name="price"
+      required>
+  </div>
+
+  <div>
+    <label for="name">Mérőszám</label>
+    <select
+    name="type"
+    ngModel
+    required>
+    <option value="db">db</option>
+        <option value="autó">autó</option>
+        <option value="ajtó">ajtó</option>
+    </select>
+  </div>
+  <div class="button-container">
+    <button
+      [disabled]="!form.valid"
+      type="submit">
+        Hozzáadás
+    </button>
+  </div>
+</form>

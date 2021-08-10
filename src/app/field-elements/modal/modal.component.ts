@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
 
-  @Output() modalVisibility = new EventEmitter<string>();
+  @Output() modalVisibility = new EventEmitter<boolean>();
   @Input() title: string;
 
   constructor() { }
@@ -16,7 +16,7 @@ export class ModalComponent implements OnInit {
   }
 
   closeModal() {
-    this.modalVisibility.emit('close');
+    this.modalVisibility.emit(false);
   }
 
 }
