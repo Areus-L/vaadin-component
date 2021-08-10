@@ -1,18 +1,57 @@
+@media screen and  (min-height: 900px) {
+  vaadin-text-area {
+    position: relative;
+    z-index: 1;
+    grid-column: 1;
+    grid-row: 2;
+    background-color:white;
+    color: black;
+    border-radius: 10%;
+    margin: 0, 8%, 0, 8%;
+    text-align: left;
+  }
+
+  label {
+    margin-top: 5%;
+    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-height: 600px) and (max-height: 900px) {
+  vaadin-text-area {
+    font-size: small;
+    position: relative;
+    z-index: 1;
+    grid-column: 1;
+    grid-row: 2;
+    background-color:white;
+    color: black;
+    border-radius: 10%;
+    margin: 0, 8%, 0, 8%;
+    text-align: left;
+    max-height: 55px !important;
+  }
+
+  label {
+    font-size: small;
+    margin-top: 2%;
+    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+    font-weight: 500;
+  }
+  span {
+    font-size: xx-small !important;
+  }
+}
+
 .textarea-container {
   display: grid;
 }
 
-vaadin-text-area {
-  position: relative;
-  z-index: 1;
-  grid-column: 1;
-  grid-row: 2;
-  background-color:white;
-  color: black;
-  border-radius: 10%;
-  margin: 0, 8%, 0, 8%;
-  text-align: left;
-}
 
 .counter {
   margin-left: 10px;
@@ -25,10 +64,4 @@ vaadin-text-area {
   grid-row: 2;
 }
 
-label {
-  margin-top: 5%;
-  position: relative;
-  grid-column: 1;
-  grid-row: 1;
-  font-weight: 500;
-}
+
