@@ -1,17 +1,12 @@
 <div class="textarea-container">
+  <label>{{ label }}</label>
   <vaadin-text-area
-    name="area"
-    ngModel
-    ngDefaultControl
     [maxlength]="maxLength"
     [style.height]="height"
     class="text-area small-field"
-    label="Szolgáltatásod rövid címe"
-    [(ngModel)]="val"
     (input)="onChangeText($event)"
-    #area
     >
   </vaadin-text-area>
-  <span class="counter">{{ area.value.length }}/{{ maxLength }}</span>
+  <span class="counter">{{ textLength }}/{{ maxLength }}</span>
 </div>
 

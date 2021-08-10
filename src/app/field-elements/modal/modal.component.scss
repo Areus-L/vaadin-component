@@ -1,10 +1,15 @@
 .modal {
   z-index: 2;
-  position: relative;
-  top: 30px;
-  left: 30%;
-  bottom: 0;
+  // position: relative;
+  // top: 30px;
+  // bottom: 0;
   width: 40%;
+  max-width: 600px !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 iron-icon {
@@ -29,7 +34,7 @@ iron-icon {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(120, 18, 124, 0.452);
+  background-color: rgba(46, 18, 124, 0.452);
   // makes the below elements visible to a degree.
   opacity: 0.45;
 }

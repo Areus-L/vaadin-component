@@ -11,26 +11,32 @@
     (modalVisibility)="closeModal($event)">
     <div class="dialog-container">
       <div class="service-parts">
+
         <div class="service-category">
-          <span>Szolgáltatás kategóriája</span>
+          <label>Szolgáltatás kategóriája</label>
           <div class="category">
-            <iron-icon slot="prefix" icon="vaadin:car"></iron-icon>
+            <iron-icon slot="prefix" icon="vaadin:car"></iron-icon>&nbsp;&nbsp;
             <span>Autófényezés, karosszériajavítás</span>
             <button class="modify-button">Módosít</button>
           </div>
         </div>
+
         <div class="service-name">
           <app-textarea
+            [label]="'Szolgáltatásod rövid címe'"
             [maxLength]="75"
             [height]="'90px'">
           </app-textarea>
         </div>
+
         <div class="service-description">
           <app-textarea
+            [label]="'Szolgáltatásod bővebb kifejtése'"
             [maxLength]="250"
             [height]="'120px'">
           </app-textarea>
         </div>
+
         <div class="price-list">
           <label for="price-list">Árlista</label>
           <div class="price-list-parts">
@@ -48,6 +54,7 @@
             </app-list-item>
           </div>
         </div>
+
         <div class="service-buttons">
           <div class="button-container">
             <vaadin-button
@@ -56,9 +63,11 @@
               >
                 Változtatások jóváhagyása
             </vaadin-button>
-            <div style="margin-top: 15px;
-            width: 300px;">
-              <app-slide-toggle></app-slide-toggle> <span>Szolgáltatás megjelenítése</span>
+            <div
+            style="margin-top: 15px;
+                  width: 300px;
+                  text-align: left;">
+              <app-slide-toggle></app-slide-toggle> &nbsp;&nbsp; <span>Szolgáltatás megjelenítése</span>
             </div>
           </div>
         </div>
