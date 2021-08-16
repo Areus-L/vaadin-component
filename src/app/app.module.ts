@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { PortalModule } from '@angular/cdk/portal';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,6 +18,8 @@ import { ListItemComponent } from './field-elements/list-item/list-item.componen
 import { SearchFieldComponent } from './field-elements/search-field/search-field.component';
 import { ModalComponent } from './field-elements/modal/modal.component';
 import { SubcategoryComponent } from './form/subcategory/subcategory.component';
+import { UserServiceComponent } from './user-service/user-service.component';
+import { ActiveFilterPipe } from './pipe/active-filter.pipe';
 
 
 @NgModule({
@@ -30,6 +33,8 @@ import { SubcategoryComponent } from './form/subcategory/subcategory.component';
     SearchFieldComponent,
     ModalComponent,
     SubcategoryComponent,
+    UserServiceComponent,
+    ActiveFilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,7 @@ import { SubcategoryComponent } from './form/subcategory/subcategory.component';
     BrowserAnimationsModule,
     MatSliderModule,
     MatSlideToggleModule,
+    FlexLayoutModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

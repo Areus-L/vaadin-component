@@ -8,7 +8,7 @@ import '@vaadin/vaadin-icons/iconset';
 import '@vaadin/vaadin-icons/vaadin-icons.js';
 import '@vaadin/vaadin-text-field/vaadin-text-area.js';
 import { registerStyles, css } from '@vaadin/vaadin-themable-mixin/register-styles.js';
-import { PriceList, ConfigService } from '../../service/config.service';
+import { Subservice, ConfigService, UserService } from '../../service/config.service';
 import { MatSlider } from '@angular/material/slider';
 
 
@@ -20,7 +20,8 @@ import { MatSlider } from '@angular/material/slider';
 })
 export class HomeComponent implements OnInit {
 
-  subServices: PriceList[] = this.config.serviceList;
+  userServices: UserService[] = this.config.userServices;
+  subServices: Subservice[] = this.config.subServiceList;
 
   isModalVisible: boolean = false;
   isPriceModalVisible: boolean = false;

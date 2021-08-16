@@ -1,0 +1,28 @@
+.service {
+  background: linear-gradient(to bottom, #BD0D6B 0%,#BD0D6B 15%, white 20%, white 100%);
+  position: relative;
+  border: solid black 1px;
+  border-radius: 15px;
+  box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.2);
+  width: max-content;
+  margin: 2em;
+}
+
+
+.service-title {
+  height: 50px;
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+}
+.service-body {
+  padding: 2em;
+  margin: 2em;
+}
+
+button {
+  background-color: var(--lumo-primary-color);
+  color: white;
+  font-weight: 600;
+  float: right;
+}

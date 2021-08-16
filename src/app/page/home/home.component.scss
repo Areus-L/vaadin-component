@@ -75,19 +75,14 @@
 
 .custom-button {
   cursor: pointer;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  margin-top: 8%;
-  transform: translate(-50%, -50%);
+  left: 45%;
+  margin-top: 2%;
+  width: 200px;
 }
 
 .dialog-container {
   display: block;
 }
-
-
 
 .category:after {
   content:'';

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PriceList } from '../../service/config.service';
+import { Subservice } from '../../service/config.service';
 
 @Component({
   selector: 'app-list-item',
@@ -8,7 +8,7 @@ import { PriceList } from '../../service/config.service';
 })
 export class ListItemComponent implements OnInit {
 
-  @Input() item: PriceList;
+  @Input() item: Subservice;
 
   constructor() { }
 

@@ -1,0 +1,19 @@
+<div class="service" fxLayout="column">
+  <div class="service-title" fxLayout="row" fxLayoutAlign="center center">
+    <span>
+      {{ service.title }}
+    </span>
+  </div>
+  <div class="service-body" fxLayout="column" fxLayoutAlign="start start">
+    <div><span>Szolgáltatás kategóriája: {{ service.category }}</span></div>
+    <div><span>Leírás: {{ service.description }}</span></div>
+    <ul *ngIf="service.subServices.length !== 0">
+      <li
+        fxLayoutAlign="start start"
+        *ngFor=" let subservice of service.subServices | activeFilter" >
+          + {{ subservice.title }} {{ subservice.price }}
+      </li>
+    </ul>
+  </div>
+  <vaadin-button>Szerkesztés</vaadin-button>
+</div>
