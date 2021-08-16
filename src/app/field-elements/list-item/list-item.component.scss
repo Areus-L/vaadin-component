@@ -26,6 +26,16 @@
   }
 }
 
+.invisible-input {
+  border: none;
+  color: inherit;
+  width: 300px;
+}
+
+input:focus {
+  outline: none;
+}
+
 .upper-index {
   font-size: xx-small;
   vertical-align: text-top;

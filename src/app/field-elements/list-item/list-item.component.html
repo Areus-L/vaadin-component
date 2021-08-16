@@ -1,8 +1,13 @@
 <div
-class="list-items"
-[ngClass]="{'inactive': !item.active}"
+  class="list-items"
+  [ngClass]="{'inactive': !item.active}"
 >
-  <div>{{ item.title }}</div>
+  <div>
+    <input
+      class="invisible-input"
+      type="text"
+      value="{{ item.title }}">
+  </div>
   <div style="display: inline-flex;">
     <div>
       {{ item.price }}
