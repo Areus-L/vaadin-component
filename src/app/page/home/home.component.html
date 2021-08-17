@@ -2,92 +2,110 @@
 <div class="container" fxLayout="column">
   <vaadin-button
   class="custom-button"
-  (click)="openModal()">
+  (click)="openModal(3)">
     Új szolgáltatás
   </vaadin-button>
 
 <!-- modal for adding new subservice -->
   <app-modal
-  [title]="'Új alkategória'"
-  *ngIf="isPriceModalVisible"
-  (modalVisibility)="closeModal($event)"
-  style="z-index: 3; position: fixed;">
-    <app-subcategory
-      (newPriceItemAdd)="addItem($event)"
-      (closeWindow)="closeModal($event)">
-    </app-subcategory>
+    id="1"
+    [title]="'Új alkategória'"
+    *ngIf="isPriceModalVisible"
+    (modalVisibility)="closeModal($event, 1)"
+    style="z-index: 3; position: fixed;">
+      <app-subcategory
+        (newPriceItemAdd)="addItem($event)"
+        (closeWindow)="closeModal($event, 1)">
+      </app-subcategory>
+  </app-modal>
+
+<!-- modal for select category -->
+  <app-modal
+    id="2"
+    [title]="'Válassz kategóriát'"
+    *ngIf="isCategoryModalVisible"
+    (modalVisibility)="closeModal($event, 2)"
+    style="z-index: 3; position: fixed;">
+      <app-category
+        (categoryChosen)="setCategory($event)"
+        (closeWindow)="closeModal($event, 2)">
+      </app-category>
   </app-modal>
 
 <!-- modal for adding new service -->
   <app-modal
+    id="3"
     [title]="'Szolgáltatás hozzáadása'"
-    *ngIf="isModalVisible"
-    (modalVisibility)="closeModal($event)">
-    <div class="dialog-container">
-      <div class="service-parts">
+    *ngIf="isServiceModalVisible"
+    (modalVisibility)="closeModal($event, 3)">
+    <form (ngSubmit)="saveService()" #serviceForm='ngForm' ngNativeValidate>
+      <div class="dialog-container">
+        <div class="service-parts">
 
-        <div class="service-category">
-          <label>Szolgáltatás kategóriája</label>
-          <div class="category">
-            <iron-icon slot="prefix" icon="vaadin:car"></iron-icon>&nbsp;&nbsp;
-            <span><strong>Autófényezés, karosszériajavítás</strong></span>
-            <button class="modify-button">Módosít</button>
-          </div>
-        </div>
-
-        <div class="service-name">
-          <app-textarea
-            [label]="'Szolgáltatásod rövid címe'"
-            [maxLength]="75"
-            [height]="'90px'">
-          </app-textarea>
-        </div>
-
-        <div class="service-description">
-          <app-textarea
-            [label]="'Szolgáltatásod bővebb kifejtése'"
-            [maxLength]="250"
-            [height]="'120px'">
-          </app-textarea>
-        </div>
-
-        <div class="price-list">
-          <label for="price-list">Árlista</label>
-          <div class="price-list-parts">
-            <div class="add-button">
-              <iron-icon
-                (click)="openModal()"
-                class="plus-buttons"
-                slot="prefix"
-                icon="vaadin:plus-circle">
-              </iron-icon> Új tétel hozzáadása
+          <div class="service-category">
+            <label>Szolgáltatás kategóriája</label>
+            <div class="category" ngModule name="category">
+              <iron-icon slot="prefix" icon={{serviceCategory.icon}}></iron-icon>&nbsp;&nbsp;
+              <span><strong>{{ serviceCategory.title }}</strong></span>
+              <button class="modify-button" (click)="openModal(2)">Módosít</button>
             </div>
-            <app-list-item
-              *ngFor="let item of subServices"
-              class="list-items"
-              [item]=item>
-            </app-list-item>
           </div>
-        </div>
+          
+          <div class="service-name">
+            <app-textarea
+              [label]="'Szolgáltatásod rövid címe'"
+              [maxLength]="75"
+              [height]="'90px'">
+            </app-textarea>
+          </div>
 
-        <div class="service-buttons">
-          <div class="button-container">
-            <vaadin-button
-              type="submit"
-              class="button-save"
-              >
-                Változtatások jóváhagyása
-            </vaadin-button>
-            <div
-            style="margin-top: 5px;
-                  width: 300px;
-                  text-align: left;">
-              <app-slide-toggle></app-slide-toggle> &nbsp;&nbsp; <span>Szolgáltatás megjelenítése</span>
+          <div class="service-description">
+            <app-textarea
+              [label]="'Szolgáltatásod bővebb kifejtése'"
+              [maxLength]="250"
+              [height]="'120px'">
+            </app-textarea>
+          </div>
+
+          <div class="price-list">
+            <label for="price-list">Árlista</label>
+            <div class="price-list-parts">
+              <div class="add-button">
+                <iron-icon
+                  (click)="openModal(1)"
+                  class="plus-buttons"
+                  slot="prefix"
+                  icon="vaadin:plus-circle">
+                </iron-icon> Új tétel hozzáadása
+              </div>
+              <app-list-item
+                *ngFor="let item of subServices"
+                class="list-items"
+                [item]=item>
+              </app-list-item>
+            </div>
+          </div>
+
+          <div class="service-buttons">
+            <div class="button-container">
+              <vaadin-button
+                type="submit"
+                class="button-save"
+                style="cursor: pointer;"
+                >
+                  Változtatások jóváhagyása
+              </vaadin-button>
+              <div
+              style="margin-top: 5px;
+                    width: 300px;
+                    text-align: left;">
+                <app-slide-toggle></app-slide-toggle> &nbsp;&nbsp; <span>Szolgáltatás megjelenítése</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </app-modal>
 
   <!-- service list -->

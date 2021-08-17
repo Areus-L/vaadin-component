@@ -20,6 +20,7 @@ import { ModalComponent } from './field-elements/modal/modal.component';
 import { SubcategoryComponent } from './form/subcategory/subcategory.component';
 import { UserServiceComponent } from './user-service/user-service.component';
 import { ActiveFilterPipe } from './pipe/active-filter.pipe';
+import { CategoryComponent } from './form/category/category.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ActiveFilterPipe } from './pipe/active-filter.pipe';
     SubcategoryComponent,
     UserServiceComponent,
     ActiveFilterPipe,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,

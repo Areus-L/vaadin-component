@@ -1,5 +1,6 @@
 import { OnInit, Component, ViewChild, ElementRef, Input } from '@angular/core';
 import { polymerHost } from '@codebakery/origami/templates';
+import { NgForm } from '@angular/forms';
 
 import '@vaadin/vaadin-button/vaadin-button.js';
 import '@vaadin/vaadin-text-field/vaadin-text-field.js';
@@ -8,7 +9,7 @@ import '@vaadin/vaadin-icons/iconset';
 import '@vaadin/vaadin-icons/vaadin-icons.js';
 import '@vaadin/vaadin-text-field/vaadin-text-area.js';
 import { registerStyles, css } from '@vaadin/vaadin-themable-mixin/register-styles.js';
-import { Subservice, ConfigService, UserService } from '../../service/config.service';
+import { Subservice, ConfigService, UserService, ServiceCategory } from '../../service/config.service';
 import { MatSlider } from '@angular/material/slider';
 
 
@@ -23,8 +24,12 @@ export class HomeComponent implements OnInit {
   userServices: UserService[] = this.config.userServices;
   subServices: Subservice[] = this.config.subServiceList;
 
-  isModalVisible: boolean = false;
+  @ViewChild('serviceForm', {static: true}) serviceForm = NgForm;
+  serviceCategory: ServiceCategory = this.config.serviceCategories[0];
+
+  isServiceModalVisible: boolean = false;
   isPriceModalVisible: boolean = false;
+  isCategoryModalVisible: boolean = false;
 
   constructor(
     private config: ConfigService
@@ -33,24 +38,52 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  openModal() {
-    if (this.isModalVisible) {
-      this.isPriceModalVisible = true;
+  openModal(modalId: number) {
+    switch (modalId) {
+      case 1: {
+        this.isPriceModalVisible = true;
+        break;
+      }
+      case 2: {
+        this.isCategoryModalVisible = true;
+        break;
+      }
+      case 3: {
+        this.isServiceModalVisible = true;
+        break;
+      }
     }
-    this.isModalVisible = true;
   }
 
 
-  closeModal(visible: boolean) {
-    if (this.isPriceModalVisible == true){
-      this.isPriceModalVisible = visible;
-    } else {
-      this.isModalVisible = visible;
+  closeModal(visible: boolean, modalId: number) {
+    switch (modalId) {
+      case 1: {
+        this.isPriceModalVisible = visible;
+        break;
+      }
+      case 2: {
+        this.isCategoryModalVisible = visible;
+        break;
+      }
+      case 3: {
+        this.isServiceModalVisible = visible;
+        break;
+      }
     }
   }
 
   addItem(item: { title: string, price: string, type: string, active: boolean }){
     this.subServices.push(item);
+  }
+
+  setCategory(category: {title: string, icon: string}) {
+    this.serviceCategory.title = category.title;
+    this.serviceCategory.icon = category.icon;
+  }
+
+  saveService() {
+    console.log(this.serviceForm);
   }
 }
 

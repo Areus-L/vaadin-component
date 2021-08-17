@@ -19,7 +19,7 @@ export class SubcategoryComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.priceItemForm);
+    console.log(this.priceItemForm.value.name)
     this.newPriceItemAdd.emit({
       title: this.priceItemForm.value.name,
       price: this.priceItemForm.value.price,

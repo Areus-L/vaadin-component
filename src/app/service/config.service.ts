@@ -15,6 +15,11 @@ export interface UserService {
   active: boolean
 }
 
+export interface ServiceCategory {
+  title: string;
+  icon: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,9 +36,15 @@ export class ConfigService {
     {category: 'Autó karbantartás', title: 'szuper autó szervíz', description: "a legjobb autószervíz a városban",subServices: this.subServiceList, active: true},
     {category: 'Autó karbantartás', title: 'szuper autó szervíz', description: "a legjobb autószervíz a városban",subServices: this.subServiceList, active: true},
     {category: 'Autó karbantartás', title: 'szuper autó szervíz', description: "a legjobb autószervíz a városban",subServices: this.subServiceList, active: true},
-    {category: 'Autó karbantartás', title: 'szuper autó szervíz', description: "a legjobb autószervíz a városban",subServices: this.subServiceList, active: true},
-    {category: 'Autó karbantartás', title: 'szuper autó szervíz', description: "a legjobb autószervíz a városban",subServices: this.subServiceList, active: true},
-    {category: 'Autó karbantartás', title: 'szuper autó szervíz', description: "a legjobb autószervíz a városban",subServices: this.subServiceList, active: true},
   ]
+
+  serviceCategories: ServiceCategory[] = [
+    {title: 'Autófényezés, karosszériajavítás', icon: 'vaadin:car'},
+    {title: 'Házimunka, takarítás', icon: 'vaadin:bed'},
+    {title: 'Bevásárlás, ügyintézés', icon: 'vaadin:cart'},
+    {title: 'Babysitting', icon: 'vaadin:family'},
+    {title: 'Költöztetés, szállítmányozás', icon: 'vaadin:truck'},
+  ]
+
   constructor() { }
 }

@@ -1,0 +1,21 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm" ngNativeValidate>
+  <!-- <input type="text" name="input" ngModel> -->
+  <div>
+    <label for="name">Kategória</label>
+    <select
+      [(ngModel)]="selectedValue"
+      name="category"
+      ngModel
+      #category
+      name="type"
+      required>
+        <option *ngFor="let category of serviceCategories; let i = index"  [ngValue]="category" [id]="i">{{ category.title }}</option>
+    </select>
+  </div>
+  <div class="button-container">
+    <button
+      type="submit">
+      Kiválaszt
+    </button>
+  </div>
+</form>
