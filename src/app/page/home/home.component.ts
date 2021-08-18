@@ -110,6 +110,14 @@ export class HomeComponent implements OnInit {
       subServices: []
     }
   }
+
+  modifyText(text: string, field: string){
+    if(field === "title") {
+      this.newService.title = text;
+    } else {
+      this.newService.description = text;
+    }
+  }
 }
 
 

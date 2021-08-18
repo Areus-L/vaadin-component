@@ -1,12 +1,13 @@
 @media screen and  (min-height: 900px) {
-  vaadin-text-area {
+  textarea {
     position: relative;
+    resize: none;
     z-index: 1;
     grid-column: 1;
     grid-row: 2;
     background-color:white;
     color: black;
-    border-radius: 10%;
+    border-radius: 15px;
     margin: 0, 8%, 0, 8%;
     text-align: left;
   }
@@ -21,18 +22,24 @@
 }
 
 @media screen and (min-height: 600px) and (max-height: 900px) {
-  vaadin-text-area {
+  textarea {
     font-size: small;
+    resize: none;
     position: relative;
     z-index: 1;
     grid-column: 1;
     grid-row: 2;
     background-color:white;
     color: black;
-    border-radius: 10%;
+    border-radius: 15px;
     margin: 0, 8%, 0, 8%;
     text-align: left;
     max-height: 70px !important;
+    border-color: grey;
+  }
+
+  textarea:focus {
+    outline: none;
   }
 
   label {

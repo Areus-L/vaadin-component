@@ -53,17 +53,21 @@
 
           <div class="service-name">
             <app-textarea
+              id="title"
               [label]="'Szolgáltatásod rövid címe'"
               [maxLength]="75"
-              [height]="'90px'">
+              [height]="'90px'"
+              (textAdded)="modifyText($event, 'title')">
             </app-textarea>
           </div>
 
           <div class="service-description">
             <app-textarea
+              id="description"
               [label]="'Szolgáltatásod bővebb kifejtése'"
               [maxLength]="250"
-              [height]="'120px'">
+              [height]="'120px'"
+              (textAdded)="modifyText($event, 'description')">
             </app-textarea>
           </div>
 

@@ -1,12 +1,16 @@
 <div class="textarea-container">
   <label>{{ label }}</label>
-  <vaadin-text-area
-    [maxlength]="maxLength"
+  <textarea
+    [attr.maxlength]="maxLength"
     [style.height]="height"
     class="text-area small-field"
     (input)="onChangeText($event)"
+    (blur)="updateDescription()"
+    [(ngModel)]="value"
+    required
     >
-  </vaadin-text-area>
+  </textarea>
   <span class="counter">{{ textLength }}/{{ maxLength }}</span>
+  value: {{ value }}
 </div>
 
