@@ -1,12 +1,16 @@
+<!-- <input [(ngModel)]="value"/>local: {{val}} -->
 <div
   class="list-items"
   [ngClass]="{'inactive': !item.active}"
->
+  >
   <div>
     <input
-      class="invisible-input"
+    class="invisible-input"
+      (blur)="updateSubservice()"
       type="text"
-      value="{{ item.title }}">
+      (input)="changeTitle($event)"
+      value="{{ item.title }}"
+      >
   </div>
   <div style="display: inline-flex;">
     <div>
@@ -15,7 +19,7 @@
     </div>
     <div>
       <app-slide-toggle
-        (changeActivity)="onChangeitemActivity($event)"
+        (changeActivity)="onChangeItemActivity($event)"
         [active]="item.active">
       </app-slide-toggle>&nbsp;&nbsp;
     </div>

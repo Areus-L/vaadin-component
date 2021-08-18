@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 export interface Subservice {
+  id: any,
   title: string;
   price: string;
   type: string;
@@ -26,16 +27,14 @@ export interface ServiceCategory {
 export class ConfigService {
 
   subServiceList: Subservice[] = [
-    {title: 'Sed ut perspiciatis unde', price: '20.000', type: 'autó', active: true},
-    {title: 'Sed ut perspiciatis unde', price: '20.000', type: 'autó', active: false},
-    {title: 'Sed ut perspiciatis unde omnis iste natus error', price: '20.000', type: 'autó', active: true},
+    {id: 1, title: 'Szolgáltatás1', price: '20.000', type: 'autó', active: true},
+    {id: 2, title: 'Szolgáltatás2', price: '20.000', type: 'autó', active: false},
+    {id: 3, title: 'Szolgáltatás3', price: '20.000', type: 'autó', active: true},
   ]
 
   userServices: UserService[] = [
-    {category: 'Autó karbantartás', title: 'szuper autó szervíz', description: "a legjobb autószervíz a városban",subServices: this.subServiceList, active: true},
-    {category: 'Autó karbantartás', title: 'szuper autó szervíz', description: "a legjobb autószervíz a városban",subServices: this.subServiceList, active: true},
-    {category: 'Autó karbantartás', title: 'szuper autó szervíz', description: "a legjobb autószervíz a városban",subServices: this.subServiceList, active: true},
-    {category: 'Autó karbantartás', title: 'szuper autó szervíz', description: "a legjobb autószervíz a városban",subServices: this.subServiceList, active: true},
+    {category: 'Autó karbantartás', title: 'autó szervíz', description: "a legjobb autószervíz a városban",subServices: this.subServiceList, active: true},
+    
   ]
 
   serviceCategories: ServiceCategory[] = [

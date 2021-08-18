@@ -9,7 +9,12 @@
       #category
       name="type"
       required>
-        <option *ngFor="let category of serviceCategories; let i = index"  [ngValue]="category" [id]="i">{{ category.title }}</option>
+        <option
+          *ngFor="let category of serviceCategories; let i = index"
+          [ngValue]="category"
+          [id]="i">
+            {{ category.title }}
+        </option>
     </select>
   </div>
   <div class="button-container">

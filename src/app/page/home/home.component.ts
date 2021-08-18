@@ -23,6 +23,13 @@ export class HomeComponent implements OnInit {
 
   userServices: UserService[] = this.config.userServices;
   subServices: Subservice[] = this.config.subServiceList;
+  newService: UserService = {
+    category: 'Autófényezés, karosszéria javítás',
+    title: '',
+    description: '',
+    active: true,
+    subServices: []
+  }
 
   @ViewChild('serviceForm', {static: true}) serviceForm = NgForm;
   serviceCategory: ServiceCategory = this.config.serviceCategories[0];
@@ -73,17 +80,35 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  addItem(item: { title: string, price: string, type: string, active: boolean }){
+  addItem(item: {id: any, title: string, price: string, type: string, active: boolean }){
     this.subServices.push(item);
   }
 
   setCategory(category: {title: string, icon: string}) {
     this.serviceCategory.title = category.title;
     this.serviceCategory.icon = category.icon;
+    this.newService.category = category.title;
   }
 
   saveService() {
     console.log(this.serviceForm);
+  }
+
+  modifyPriceList(priceItem: Subservice) {
+    this.newService.subServices.push(priceItem);
+  }
+
+  createNewService(){
+    this.userServices.push(this.newService);
+    console.log(this.userServices);
+    this.closeModal(false, 3);
+    this.newService = {
+      category: 'Autófényezés, karosszéria javítás',
+      title: '',
+      description: '',
+      active: true,
+      subServices: []
+    }
   }
 }
 
